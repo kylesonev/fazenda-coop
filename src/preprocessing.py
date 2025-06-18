@@ -1,6 +1,6 @@
 import pandas as pd
 
-def spliting_train_test(df: pd.DataFrame, date_column):
+def spliting_train_test(df: pd.DataFrame, date_column: str):
     df = df.drop(columns=[date_column])
     split_idx = int(len(df) * 0.8)
     train = df.iloc[:split_idx].copy() 
