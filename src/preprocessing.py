@@ -1,6 +1,11 @@
 import pandas as pd
 
-def spliting_train_test(df: pd.DataFrame, date_column: str):
+def spliting_train_test(df: pd.DataFrame, date_column: str) -> pd.Series:
+    """
+    Splits a data frame for train and test
+    Train: 80%
+    Test: 20%
+    """
     df = df.drop(columns=[date_column])
     split_idx = int(len(df) * 0.8)
     train = df.iloc[:split_idx].copy() 
@@ -10,6 +15,9 @@ def spliting_train_test(df: pd.DataFrame, date_column: str):
 
 
 def preparing_prophet(df: pd.DataFrame, target: str) -> pd.DataFrame:
+    """
+    Prepares a dataframe for Prophet model
+    """
     if "date" in df.columns:
         df_prophet = df[['date', target]].rename(columns={'date': 'ds', target: 'y'}).copy()
     else:
@@ -17,7 +25,10 @@ def preparing_prophet(df: pd.DataFrame, target: str) -> pd.DataFrame:
     return df_prophet
 
 
-def preparing_arima(df: pd.DataFrame, target: str):
+def preparing_arima(df: pd.DataFrame, target: str) -> pd.DataFrame:
+    """
+    Prepares X and y for arima
+    """
     X = df.drop(columns=[target])
     y = df[target]
 
