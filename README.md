@@ -60,7 +60,7 @@ pip install -r requirements.txt
 
 ---
 
-## ✨ Models Used
+## Models Used
 
 - **Prophet** (Meta/Facebook)
 - **Auto ARIMA** (pmdarima)
@@ -68,8 +68,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🛠️ Work in Progress
+## Work in Progress
 
-- [ ] Refactor notebooks into reusable scripts (`src/`)
 - [ ] Add automated tests
 - [ ] Improve interactive visualizations
